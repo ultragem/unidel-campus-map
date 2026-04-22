@@ -1,0 +1,244 @@
+/* =============================================
+   1. RESET & BASE
+   ============================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f1117;
+  color: #f0f0f0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+/* =============================================
+   2. NAVBAR
+   ============================================= */
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: #1a1d27;
+  border-bottom: 1px solid #2e3247;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+#logo-img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+}
+
+#accessibility-btn {
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.1s ease;
+}
+
+#accessibility-btn:hover {
+  background: #1558b0;
+  transform: scale(1.03);
+}
+
+
+/* =============================================
+   3. SIDEBAR
+   ============================================= */
+
+#sidebar {
+  position: fixed;
+  top: 56px;
+  left: 0;
+  width: 280px;
+  height: calc(100vh - 56px);
+  background: #e8f4fc;
+  border-right: 1px solid #b3d9f2;
+  padding: 20px;
+  z-index: 900;
+  overflow-y: auto;
+  transition: background 0.3s ease;
+  color: #1a1d27;
+}
+
+#sidebar-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0a3d62;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #b3d9f2;
+  padding-bottom: 10px;
+}
+
+#sidebar-desc {
+  font-size: 0.85rem;
+  color: #4a6fa5;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+#building-info ul {
+  list-style: none;
+  margin-top: 12px;
+}
+
+#building-info ul li {
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #1a1d27;
+}
+
+#building-info ul li .label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4a6fa5;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+#info-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0a3d62;
+  margin-bottom: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* =============================================
+   4. MAP
+   ============================================= */
+
+#map {
+  position: fixed;
+  top: 56px;
+  left: 280px;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+
+/* =============================================
+   5. ACCESSIBILITY MODE
+   ============================================= */
+
+body.a11y-mode {
+  background: #000000;
+}
+
+body.a11y-mode #navbar {
+  background: #000000;
+  border-bottom: 2px solid #FFD700;
+}
+
+body.a11y-mode #logo {
+  color: #FFD700;
+  font-size: 1.1rem;
+}
+
+body.a11y-mode #accessibility-btn {
+  background: #FFD700;
+  color: #000000;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+body.a11y-mode #accessibility-btn:hover {
+  background: #e6c800;
+}
+
+body.a11y-mode #sidebar {
+  background: #000000;
+  border-right: 2px solid #FFD700;
+}
+
+body.a11y-mode #sidebar-title {
+  color: #FFD700;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #FFD700;
+}
+
+body.a11y-mode #sidebar-desc {
+  color: #cccccc;
+  font-size: 0.95rem;
+}
+
+body.a11y-mode #building-info ul li {
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+
+body.a11y-mode #building-info ul li .label {
+  color: #FFD700;
+  font-size: 0.8rem;
+}
+
+body.a11y-mode #info-name {
+  color: #FFD700;
+  font-size: 1.1rem;
+}
+
+
+/* =============================================
+   6. RESPONSIVE — MOBILE
+   ============================================= */
+
+@media (max-width: 768px) {
+
+  body {
+    overflow: auto;
+  }
+
+  #sidebar {
+    position: relative;
+    top: 56px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #2e3247;
+  }
+
+  #map {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+  }
+}

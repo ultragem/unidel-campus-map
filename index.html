@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UNIDEL Campus Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- TOP NAVIGATION BAR -->
+  <div id="navbar">
+    <div id="nav-left">
+      <span id="logo"> UNIDEL Campus Map</span>
+    </div>
+    <div id="nav-right">
+      <button id="accessibility-btn">♿ Accessibility Mode</button>
+    </div>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+    <h2 id="sidebar-title">Select a Building</h2>
+    <p id="sidebar-desc">Click any marker on the map to see building details here.</p>
+
+    <div id="building-info" class="hidden">
+      <h3 id="info-name"></h3>
+      <ul>
+        <li><span class="label">Faculty:</span> <span id="info-faculty"></span></li>
+        <li><span class="label">Wheelchair Ramp:</span> <span id="info-ramp"></span></li>
+        <li><span class="label">Elevator:</span> <span id="info-elevator"></span></li>
+        <li><span class="label">Accessible Entrance:</span> <span id="info-entrance"></span></li>
+        <li><span class="label">Notes:</span> <span id="info-notes"></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MAP CONTAINER -->
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Your JS files — buildings first, then map -->
+  <script src="js/buildings.js"></script>
+  <script src="js/map.js"></script>
+
+</body>
+</html>
